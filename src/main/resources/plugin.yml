@@ -1,0 +1,4 @@
+name: SlotPlugin
+version: '${version}'
+main: dev.isksss.slotplugin.SlotPlugin
+api-version: 1.19
