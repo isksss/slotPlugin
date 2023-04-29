@@ -7,12 +7,16 @@ import java.sql.Statement;
 
 public class InitDb {
     Connection connection = null;
-    public void InitDb(){
+    public void Init(){
         try {
             Class.forName("org.sqlite.JDBC");
             connection = DriverManager.getConnection("jdbc:sqlite:./slot.sqlite");
             Statement statement = connection.createStatement();
-            statement.executeUpdate("CREATE TABLE IF NOT EXISTS players (id INTEGER PRIMARY KEY, name TEXT)");
+            statement.executeUpdate("CREATE TABLE IF NOT EXISTS [chest] (\n" +
+                    "[id] INTEGER NOT NULL UNIQUE,\n" +
+                    "[location] BLOB NOT NULL UNIQUE,\n" +
+                    "PRIMARY KEY([id],[location])\n" +
+                    ");");
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         } finally {

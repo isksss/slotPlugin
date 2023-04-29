@@ -2,3 +2,11 @@ name: SlotPlugin
 version: '${version}'
 main: dev.isksss.slotplugin.SlotPlugin
 api-version: 1.19
+
+commands:
+  register:
+#    aliases: [ t, testest ]
+    description: Register a chest.
+#    permission: testplugin.command.test
+#    permission-message: Permission denied
+    usage: /register
